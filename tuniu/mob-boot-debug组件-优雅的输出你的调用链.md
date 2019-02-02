@@ -216,14 +216,15 @@ public class DebugHttpMessageConverter extends JsonWrapperHttpMessageConverter {
 
 ## 小提示
 * 结合前端的toolbar组件结合起来使用会更加方便。  
+* noCache参数可以输出不带缓存的调用链(需要和mob-boot-cache组件一起使用)
 
-<img src="http://m.tuniucdn.com/fb2/t1/G5/M00/6D/91/Cii-tFxT-muILDugAA2rZytF24gAATr3AIx7LkADat_111.png" width="600" hegiht="413" align=center />
+<img src="" width="600" hegiht="413" align=center />
 
-<img src="http://m.tuniucdn.com/fb2/t1/G4/M00/B1/1F/Cii-VVxT--mIcdPvAAeCQlXf4IIAADrRAHds20AB4Ja892.png" width="600" hegiht="413" align=center />
+<img src="http://m.tuniucdn.com/fb2/t1/G4/M00/B1/32/Cii-VVxUDxCIZzKxAAmTdbKZ0t0AADrawKX6iIACZON914.png" width="600" hegiht="413" align=center />
 
 
 
 ## 写在最后
-* 不足之处: 1.对于自定义的线程异步调用不支持；2.spring mvc的项目无法直接使用；
+* 不足之处: 1.对于自定义的线程异步调用不支持；2.spring mvc的项目无法直接使用；3.暂时不支持数据库查询的日志输出
 
 * 注意事项: 对于幂等的接口，如查询的接口可以通过debug组件去输出调用链的日志，非幂等的接口，如一些写操作的接口谨慎使用
