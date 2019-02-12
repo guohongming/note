@@ -1,4 +1,4 @@
-# mob-boot-debug组件-优雅的输出你的调用链
+# mob-boot-debug工具-优雅的输出你的调用链
 
 
 ## 背景介绍
@@ -207,11 +207,11 @@ public class DebugHttpMessageConverter extends JsonWrapperHttpMessageConverter {
 ## 使用示例
 * 如下图，在请求路径中加入了/debug,可以输出最后的response 和所有的调用链日志  
 <img src="https://www.github.com/guohongming/note/raw/master/小书匠/1549934883964_图片.png" width="600" hegiht="413" align=center />
-* 补充：如果依赖的项目都使用debug工具，可以实现从前端到最底层的调用链的输出。
+* 补充：如果依赖的项目都使用debug工具，可以实现系统间debug工具的串联。
 
 ## 写在最后
 * 不足之处:
  1.现在对于异步的调用是通过异步改成同步的方式去输出调用日志的，所以无法还原最真实的异步调用场景。
  2.spring mvc的项目无法直接使用,虽然组件无法直接使用，但是实现原理方式差不多。
- 3.数据库查询SQL调用也可以Debug出来（之前应用无SQL调用，没有做这个功能）。
-* 注意事项: 对于一些涉及修改数据的接口，需要注意下，避免Debug的时候数据被改了。
+ 3.数据库查询SQL调用也可以debug出来（之前应用无SQL调用，没有做这个功能）。
+* 注意事项: 对于一些涉及修改数据的接口，需要注意下，避免debug的时候数据被改了。
