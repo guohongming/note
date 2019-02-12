@@ -1,4 +1,4 @@
-# mob-boot-debug工具-优雅的输出你的调用链
+# mob-boot-debug工具-优雅输出调用链
 
 
 ## 背景介绍
@@ -207,7 +207,7 @@ public class DebugHttpMessageConverter extends JsonWrapperHttpMessageConverter {
 ## 使用示例
 * 如下图，在请求路径中加入了/debug,可以输出最后的response 和所有的调用链日志  
 <img src="https://www.github.com/guohongming/note/raw/master/小书匠/1549934883964_图片.png" width="600" hegiht="413" align=center />
-* 补充：如果依赖的项目都使用debug工具，可以实现系统间debug工具的串联。
+* 补充：如果依赖的项目都使用debug工具，可以实现系统间debug工具的串联
 
 ## 写在最后
 * 不足之处:
