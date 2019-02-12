@@ -1,7 +1,7 @@
 # mob-boot-debug组件-优雅的输出你的调用链
 
 
-##背景介绍
+## 背景介绍
 在微服务架构下，系统多，调用链条长，最上层系统 -> 中后台系统 -> 底层系统，系统越复杂，调用链条越深，问题分析定位涉及到的系统越多。 无线前端(APP/网站/M站等)作为公司系统架构的最顶层系统，依赖非常多的中后台系统，通过Rest、Tsp、Pebble方式接口调用，数据库／缓存调用，聚合组装处理数据，返回给前端呈现给用户，依赖的接口多，任何一个接口出问题，都有可能影响前端数据的正确性呈现，分析定位问题比较麻烦。前端涉及的业务多，技术支持多，技术支持处理还需要考虑及时响应。于是mob- boot- debug工具(组件)应运而生，通过debug工具可以优雅地输出依赖接口的调用链及其相关数据，辅助分析定位问题。
 ##设计目标
 1、**提高开发／测试质量效率**  
@@ -206,20 +206,12 @@ public class DebugHttpMessageConverter extends JsonWrapperHttpMessageConverter {
 
 ## 使用示例
 * 如下图，在请求路径中加入了/debug,可以输出最后的response 和所有的调用链日志  
-<img src="http://m.tuniucdn.com/fb2/t1/G4/M00/B0/C0/Cii-VVxTLzGIEsCvAASCiQFbZaEAADqgwNBBwwABIKh290.png" width="600" hegiht="413" align=center />
-
-## 小提示
-* 结合前端的toolbar组件结合起来使用会更加方便。  
-
-<img src="http://m.tuniucdn.com/fb2/t1/G5/M00/6D/91/Cii-tFxT-muILDugAA2rZytF24gAATr3AIx7LkADat_111.png" width="600" hegiht="413" align=center />
-
-<img src="http://m.tuniucdn.com/fb2/t1/G4/M00/B1/1F/Cii-VVxT--mIcdPvAAeCQlXf4IIAADrRAHds20AB4Ja892.png" width="600" hegiht="413" align=center />
-
-
+<img src="https://www.github.com/guohongming/note/raw/master/小书匠/1549934883964_图片.png" width="600" hegiht="413" align=center />
+* 补充：如果依赖的项目都使用debug工具，可以实现从前端到最底层的调用链的输出。
 
 ## 写在最后
 * 不足之处:
- 1.对于自定义的线程异步调用不支持；  
- 2.spring mvc的项目无法直接使用,虽然组件无法直接使用，但是实现原理方式差不多;
+ 1.现在对于异步的调用是通过异步改成同步的方式去输出调用日志的，所以无法还原最真实的异步调用场景。
+ 2.spring mvc的项目无法直接使用,虽然组件无法直接使用，但是实现原理方式差不多。
  3.数据库查询SQL调用也可以Debug出来（之前应用无SQL调用，没有做这个功能）。
 * 注意事项: 对于一些涉及修改数据的接口，需要注意下，避免Debug的时候数据被改了。
